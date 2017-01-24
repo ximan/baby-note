@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui=yes" charset="UTF-8">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <a href="/" class="btn btn-default">首页</a>
+        </div>
+        <div class="col-xs-6 text-center">
+            <h4><%= title %></h4>
+        </div>
+        <div class="col-xs-3 text-right">
+            <% if (user) { %>
+            <a href="/logout" class="btn btn-default">登出</a>
+            <% } %>
+        </div>
+    </div>
+    <hr>
+    <% if (success) { %>
+      <p class="lead text-success"><%= success %></p>
+    <% } %>
+    <% if (error) { %>
+      <p class="lead text-danger"><%= error %></p>
+    <% } %>

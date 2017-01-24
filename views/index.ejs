@@ -1,0 +1,37 @@
+<%- include header %>
+<div class="index">
+    <% if (user) { %>
+    <div class="row">
+        <div class="col-xs-6">
+            <h4>我的宝宝：</h4>
+        </div>
+        <div class="col-xs-6 text-right">
+            <a class="btn btn-primary btn-xs" href="/post">新生宝宝</a>
+        </div>
+    </div>
+        <%if(babyList.length > 0){%>
+        <div>
+            
+            <table class="table table-striped table-bordered">
+            <% babyList.forEach(function (list, index) { %>
+                <tr>
+                    <td><%=index+1%></td>
+                    <td>
+                        <a href="/article/<%= list._id %>"><%= list.babyName %></a>
+                    </td>
+                </tr>
+            <% }) %>
+            </ul>
+        </div>
+        <%}else{%>
+        <p class="lead">我还没有宝宝</p>
+        <%}%>
+    <% }else{ %>
+    <div class="row text-right">
+        <a class="btn btn-primary" href="/reg">注册</a>
+        <a class="btn btn-primary" href="/login">登录</a>
+    </div>
+    <h1 class="text-center">宝宝便签，记录宝宝吃饭和拉粑粑</h1>
+    <% } %>
+</div>
+<%- include footer %>

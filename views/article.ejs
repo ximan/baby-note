@@ -1,0 +1,9 @@
+<%- include header %>
+<% if (user && (user.name == post.name)) { %>
+<div class="row text-right">
+    <a class="btn btn-primary btn-xs" href="/edit/<%= post._id %>">编辑宝宝名字</a>
+    <a class="btn btn-primary btn-xs" href="/remove/<%= post._id %>">删除宝宝</a>
+</div>
+<% } %>
+<%- include comment %>
+<%- include footer %>
